@@ -1,26 +1,48 @@
 <p align="center">
-  <img src="icon.png" alt="agents.eco framework" width="128" />
+  <img src="icon.png" alt="Open Agentic Framework" width="160" />
 </p>
 
-# @agents-eco/framework
+<h1 align="center">Open Agentic Framework</h1>
 
-**Open agentic framework** — skills-as-markdown, pluggable LLM providers, file-based memory.
+<p align="center">
+  <strong>Skills-as-markdown. Pluggable LLM providers. File-based memory.</strong><br/>
+  Built by <a href="https://agents.eco">agents.eco</a> — the decentralized AI agent economy.
+</p>
 
-Built for [agents.eco](https://agents.eco). MIT licensed. Works with any OpenAI-compatible API.
+<p align="center">
+  <a href="https://www.npmjs.com/package/@agents-eco/framework"><img src="https://img.shields.io/npm/v/@agents-eco/framework?style=flat-square" alt="npm" /></a>
+  <a href="https://github.com/agents-eco/open-agentic-framework/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" /></a>
+  <a href="https://github.com/agents-eco/open-agentic-framework"><img src="https://img.shields.io/github/stars/agents-eco/open-agentic-framework?style=flat-square" alt="GitHub stars" /></a>
+</p>
 
 ```
 npm install @agents-eco/framework
 ```
 
-## Why
+---
 
-Most agent frameworks are either too complex (LangChain) or too locked-in (proprietary APIs). This framework takes inspiration from [OpenClaw](https://github.com/openclaw/openclaw)'s architecture:
+## Why This Framework
 
-- **Skills as Markdown** — extend your agent with `.md` files, not code. Hot-reloadable, human-readable, agent-authorable.
-- **Pluggable providers** — OpenAI, Venice, Groq, Ollama, agents.eco, or any OpenAI-compatible API.
-- **File-based memory** — JSONL + Markdown files you can inspect, edit, and version control.
-- **Tool calling** — register handlers, define tools in skill files, let the agent use them.
-- **Zero lock-in** — MIT license, no vendor dependencies, works offline with Ollama.
+Most agent frameworks are either too complex or too locked-in. We built this because we needed something that was simple to extend, transparent to debug, and free from vendor dependency.
+
+- **Skills as Markdown** — Extend your agent by writing a `.md` file. No code required. Hot-reloadable, human-readable, agent-authorable.
+- **Pluggable Providers** — OpenAI, Venice, Groq, Ollama, or any OpenAI-compatible API. Swap providers in a single line.
+- **File-Based Memory** — JSONL and Markdown files you can inspect, edit, and version control. No opaque vector databases.
+- **Tool Calling** — Register handlers, define tools in skill frontmatter, full lifecycle hooks at every stage.
+- **Zero Lock-In** — MIT licensed. No vendor dependencies. Works fully offline with Ollama.
+
+## Why agents.eco
+
+[agents.eco](https://agents.eco) is building the decentralized AI agent economy — infrastructure where autonomous agents transact, pay for inference, and operate independently on-chain.
+
+This framework is the open-source foundation of that vision. We believe the tools agents are built with should be:
+
+- **Open** — Fully readable, forkable, and auditable. MIT licensed.
+- **Composable** — Small, focused primitives that work together. Skills, providers, memory, and tools are all independent and swappable.
+- **Portable** — No dependency on any single provider, cloud service, or platform. Your agent runs wherever you want it to.
+- **Transparent** — Memory stored as files you can read. Billing on-chain. No black boxes.
+
+Whether you use the agents.eco platform or run entirely on your own infrastructure, this framework works the same way.
 
 ## Quick Start
 
@@ -382,6 +404,24 @@ Copy them to your project's `skills/` directory and register the corresponding t
 | `usage` | `{promptTokens, completionTokens, totalTokens, llmCalls}` | Token usage |
 | `duration` | `number` | Time in milliseconds |
 
+## Contributing
+
+We welcome contributions of all kinds. This project is early and there is significant room to shape its direction.
+
+- **Write a skill** — It is a markdown file. No build step, no boilerplate.
+- **Add a provider** — Implement the `Provider` interface for a new LLM backend.
+- **Improve memory** — Add semantic search, SQLite storage, or vector database adapters.
+- **Report issues** — Bug reports and feature requests help us prioritize.
+- **Submit a pull request** — Code contributions are reviewed promptly.
+
+Please open an issue before starting large changes so we can align on direction.
+
 ## License
 
 MIT — [agents.eco](https://agents.eco)
+
+---
+
+<p align="center">
+  Built by <a href="https://agents.eco">agents.eco</a> — the decentralized AI agent economy.
+</p>
