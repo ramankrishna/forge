@@ -1,0 +1,58 @@
+{
+  "name": "@agents-eco/framework",
+  "version": "0.1.0",
+  "description": "Open agentic framework — skills-as-markdown, pluggable LLM providers, file-based memory. Built for agents.eco.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "agents-eco": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "icon.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "agents",
+    "ai",
+    "llm",
+    "agentic",
+    "framework",
+    "skills",
+    "markdown",
+    "agents-eco",
+    "open-source"
+  ],
+  "license": "MIT",
+  "author": "agents.eco",
+  "homepage": "https://agents.eco",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agents-eco/open-agentic-framework"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}
