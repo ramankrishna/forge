@@ -1,5 +1,5 @@
 {
-  "name": "@agents-eco/framework",
+  "name": "@agents-eco/open-agentic-framework",
   "version": "0.1.0",
   "description": "Open agentic framework — skills-as-markdown, pluggable LLM providers, file-based memory. Built for agents.eco.",
   "type": "module",

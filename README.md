@@ -10,13 +10,13 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@agents-eco/framework"><img src="https://img.shields.io/npm/v/@agents-eco/framework?style=flat-square" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/@agents-eco/open-agentic-framework"><img src="https://img.shields.io/npm/v/@agents-eco/open-agentic-framework?style=flat-square" alt="npm" /></a>
   <a href="https://github.com/agents-eco/open-agentic-framework/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" /></a>
   <a href="https://github.com/agents-eco/open-agentic-framework"><img src="https://img.shields.io/github/stars/agents-eco/open-agentic-framework?style=flat-square" alt="GitHub stars" /></a>
 </p>
 
 ```
-npm install @agents-eco/framework
+npm install @agents-eco/open-agentic-framework
 ```
 
 ---
@@ -49,7 +49,7 @@ Whether you use the agents.eco platform or run entirely on your own infrastructu
 ### Programmatic
 
 ```typescript
-import { Agent } from "@agents-eco/framework";
+import { Agent } from "@agents-eco/open-agentic-framework";
 
 const agent = new Agent({
   name: "my-agent",
@@ -70,13 +70,13 @@ console.log(result.response);
 
 ```bash
 # Initialize a new agent project
-npx @agents-eco/framework init
+npx @agents-eco/open-agentic-framework init
 
 # Start interactive chat
-npx @agents-eco/framework chat
+npx @agents-eco/open-agentic-framework chat
 
 # One-shot prompt
-npx @agents-eco/framework run "Explain quantum computing in 3 sentences"
+npx @agents-eco/open-agentic-framework run "Explain quantum computing in 3 sentences"
 ```
 
 ## Providers
@@ -91,7 +91,7 @@ import {
   ollamaProvider,
   agentsEcoProvider,
   OpenAIProvider,
-} from "@agents-eco/framework";
+} from "@agents-eco/open-agentic-framework";
 
 // Pre-configured providers
 const venice = veniceProvider("your-api-key");
@@ -213,7 +213,7 @@ Memory files:
 ### Custom Memory Store
 
 ```typescript
-import { MemoryStore, MemoryEntry } from "@agents-eco/framework";
+import { MemoryStore, MemoryEntry } from "@agents-eco/open-agentic-framework";
 
 class MyVectorMemory implements MemoryStore {
   async add(entry) { /* store in your vector DB */ }
@@ -317,7 +317,7 @@ Environment variables are resolved with `${VAR_NAME}` syntax.
 Use alongside the [agents-eco-sdk](https://www.npmjs.com/package/agents-eco-sdk) for billing, wallet management, and the full agents.eco platform:
 
 ```typescript
-import { Agent, agentsEcoProvider } from "@agents-eco/framework";
+import { Agent, agentsEcoProvider } from "@agents-eco/open-agentic-framework";
 import { AgentsEco } from "agents-eco-sdk";
 
 // Use agents.eco as the LLM provider (pay-per-token with USDC)
