@@ -1,7 +1,7 @@
 {
-  "name": "@agents-eco/open-agentic-framework",
+  "name": "@bottensor/forge",
   "version": "0.1.0",
-  "description": "Open agentic framework — skills-as-markdown, pluggable LLM providers, file-based memory. Built for agents.eco.",
+  "description": "Open agentic framework — skills-as-markdown, pluggable LLM providers, file-based memory. Built for Bottensor.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -13,7 +13,7 @@
     }
   },
   "bin": {
-    "agents-eco": "./dist/cli.js"
+    "bottensor-forge": "./dist/cli.js"
   },
   "files": [
     "dist",
@@ -25,7 +25,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
     "agents",
@@ -35,21 +36,24 @@
     "framework",
     "skills",
     "markdown",
-    "agents-eco",
+    "bottensor",
     "open-source"
   ],
   "license": "MIT",
-  "author": "agents.eco",
-  "homepage": "https://agents.eco",
+  "author": "Bottensor",
+  "homepage": "https://github.com/ramankrishna/forge",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agents-eco/open-agentic-framework"
+    "url": "https://github.com/ramankrishna/forge"
+  },
+  "bugs": {
+    "url": "https://github.com/ramankrishna/forge/issues"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "yaml": "^2.3.4"
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

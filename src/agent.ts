@@ -22,7 +22,7 @@ const MAX_TOOL_ROUNDS = 10;
  *
  * Usage:
  * ```ts
- * import { Agent } from "@agents-eco/framework";
+ * import { Agent } from "@bottensor/forge";
  *
  * const agent = new Agent({
  *   name: "my-agent",

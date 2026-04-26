@@ -6,17 +6,17 @@
 
 <p align="center">
   <strong>Skills-as-markdown. Pluggable LLM providers. File-based memory.</strong><br/>
-  Built by <a href="https://agents.eco">agents.eco</a> — the decentralized AI agent economy.
+  Built for Bottensor.
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@agents-eco/open-agentic-framework"><img src="https://img.shields.io/npm/v/@agents-eco/open-agentic-framework?style=flat-square" alt="npm" /></a>
-  <a href="https://github.com/agents-eco/open-agentic-framework/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" /></a>
-  <a href="https://github.com/agents-eco/open-agentic-framework"><img src="https://img.shields.io/github/stars/agents-eco/open-agentic-framework?style=flat-square" alt="GitHub stars" /></a>
+  <a href="https://www.npmjs.com/package/@bottensor/forge"><img src="https://img.shields.io/npm/v/@bottensor/forge?style=flat-square" alt="npm" /></a>
+  <a href="https://github.com/ramankrishna/forge/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" /></a>
+  <a href="https://github.com/ramankrishna/forge"><img src="https://img.shields.io/github/stars/ramankrishna/forge?style=flat-square" alt="GitHub stars" /></a>
 </p>
 
 ```
-npm install @agents-eco/open-agentic-framework
+npm install @bottensor/forge
 ```
 
 ---
@@ -31,25 +31,21 @@ Most agent frameworks are either too complex or too locked-in. We built this bec
 - **Tool Calling** — Register handlers, define tools in skill frontmatter, full lifecycle hooks at every stage.
 - **Zero Lock-In** — MIT licensed. No vendor dependencies. Works fully offline with Ollama.
 
-## Why agents.eco
+## Design Principles
 
-[agents.eco](https://agents.eco) is building the decentralized AI agent economy — infrastructure where autonomous agents transact, pay for inference, and operate independently on-chain.
-
-This framework is the open-source foundation of that vision. We believe the tools agents are built with should be:
+The tools agents are built with should be:
 
 - **Open** — Fully readable, forkable, and auditable. MIT licensed.
 - **Composable** — Small, focused primitives that work together. Skills, providers, memory, and tools are all independent and swappable.
 - **Portable** — No dependency on any single provider, cloud service, or platform. Your agent runs wherever you want it to.
-- **Transparent** — Memory stored as files you can read. Billing on-chain. No black boxes.
-
-Whether you use the agents.eco platform or run entirely on your own infrastructure, this framework works the same way.
+- **Transparent** — Memory stored as files you can read. No black boxes.
 
 ## Quick Start
 
 ### Programmatic
 
 ```typescript
-import { Agent } from "@agents-eco/open-agentic-framework";
+import { Agent } from "@bottensor/forge";
 
 const agent = new Agent({
   name: "my-agent",
@@ -62,7 +58,7 @@ const agent = new Agent({
   },
 });
 
-const result = await agent.chat("What is agents.eco?");
+const result = await agent.chat("Hello!");
 console.log(result.response);
 ```
 
@@ -70,13 +66,13 @@ console.log(result.response);
 
 ```bash
 # Initialize a new agent project
-npx @agents-eco/open-agentic-framework init
+npx @bottensor/forge init
 
 # Start interactive chat
-npx @agents-eco/open-agentic-framework chat
+npx @bottensor/forge chat
 
 # One-shot prompt
-npx @agents-eco/open-agentic-framework run "Explain quantum computing in 3 sentences"
+npx @bottensor/forge run "Explain quantum computing in 3 sentences"
 ```
 
 ## Providers
@@ -89,16 +85,14 @@ import {
   openaiProvider,
   groqProvider,
   ollamaProvider,
-  agentsEcoProvider,
   OpenAIProvider,
-} from "@agents-eco/open-agentic-framework";
+} from "@bottensor/forge";
 
 // Pre-configured providers
 const venice = veniceProvider("your-api-key");
 const openai = openaiProvider("sk-...");
 const groq = groqProvider("gsk_...");
 const ollama = ollamaProvider("llama3.2"); // local, no API key needed
-const eco = agentsEcoProvider("ak_...");
 
 // Custom provider
 const custom = new OpenAIProvider({
@@ -213,7 +207,7 @@ Memory files:
 ### Custom Memory Store
 
 ```typescript
-import { MemoryStore, MemoryEntry } from "@agents-eco/open-agentic-framework";
+import { MemoryStore, MemoryEntry } from "@bottensor/forge";
 
 class MyVectorMemory implements MemoryStore {
   async add(entry) { /* store in your vector DB */ }
@@ -312,32 +306,6 @@ maxTokens: 4096
 
 Environment variables are resolved with `${VAR_NAME}` syntax.
 
-## Integration with agents.eco SDK
-
-Use alongside the [agents-eco-sdk](https://www.npmjs.com/package/agents-eco-sdk) for billing, wallet management, and the full agents.eco platform:
-
-```typescript
-import { Agent, agentsEcoProvider } from "@agents-eco/open-agentic-framework";
-import { AgentsEco } from "agents-eco-sdk";
-
-// Use agents.eco as the LLM provider (pay-per-token with USDC)
-const agent = new Agent({
-  name: "eco-agent",
-  systemPrompt: "You are powered by agents.eco.",
-  provider: {
-    name: "agents.eco",
-    apiKey: process.env.AGENTS_ECO_API_KEY!,
-    baseUrl: "https://agents-eco-dfc6baa9f955.herokuapp.com/v1",
-    defaultModel: "qwen3-4b",
-  },
-  skillsDir: "./skills",
-});
-
-const result = await agent.chat("Hello!");
-console.log(result.response);
-console.log(`Tokens used: ${result.usage.totalTokens}`);
-```
-
 ## Architecture
 
 ```
@@ -418,10 +386,10 @@ Please open an issue before starting large changes so we can align on direction.
 
 ## License
 
-MIT — [agents.eco](https://agents.eco)
+MIT — Bottensor
 
 ---
 
 <p align="center">
-  Built by <a href="https://agents.eco">agents.eco</a> — the decentralized AI agent economy.
+  Built for Bottensor.
 </p>
