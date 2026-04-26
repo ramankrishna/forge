@@ -13,14 +13,14 @@ const DEFAULT_MEMORY_DIR = "./.agent/memory";
 
 function printHelp(): void {
   console.log(`
-  @agents-eco/framework — Open Agentic Framework
+  @bottensor/forge — Open Agentic Framework
 
   Usage:
-    agents-eco init              Create a new agent project
-    agents-eco chat              Start interactive chat with your agent
-    agents-eco run <prompt>      Run a one-shot prompt
-    agents-eco skills            List loaded skills
-    agents-eco help              Show this help
+    bottensor-forge init              Create a new agent project
+    bottensor-forge chat              Start interactive chat with your agent
+    bottensor-forge run <prompt>      Run a one-shot prompt
+    bottensor-forge skills            List loaded skills
+    bottensor-forge help              Show this help
 
   Configuration:
     Create an agent.yaml in your project root:
@@ -82,10 +82,10 @@ async function cmdInit(): Promise<void> {
     return;
   }
 
-  const template = `# agents.eco Agent Configuration
+  const template = `# Bottensor Forge Agent Configuration
 name: my-agent
 systemPrompt: |
-  You are a helpful AI assistant powered by agents.eco.
+  You are a helpful AI assistant.
   You are friendly, concise, and knowledgeable.
 
 provider:
@@ -93,13 +93,6 @@ provider:
   apiKey: \${VENICE_API_KEY}
   baseUrl: https://api.venice.ai/api/v1
   defaultModel: qwen3-4b
-
-# Uncomment to use agents.eco API:
-# provider:
-#   name: agents.eco
-#   apiKey: \${AGENTS_ECO_API_KEY}
-#   baseUrl: https://agents-eco-dfc6baa9f955.herokuapp.com/v1
-#   defaultModel: qwen3-4b
 
 # Uncomment to use OpenAI:
 # provider:
@@ -151,7 +144,7 @@ Always match the user's language if they greet you in a specific language.
   
   Next steps:
     1. Set your API key: export VENICE_API_KEY=your-key
-    2. Start chatting: agents-eco chat
+    2. Start chatting: bottensor-forge chat
     3. Add skills: create .md files in ./skills/
 `);
 }
@@ -159,12 +152,12 @@ Always match the user's language if they greet you in a specific language.
 async function cmdChat(): Promise<void> {
   const config = loadConfig();
   if (!config) {
-    console.error("No agent.yaml found. Run 'agents-eco init' first.");
+    console.error("No agent.yaml found. Run 'bottensor-forge init' first.");
     process.exit(1);
   }
 
   const agent = new Agent(config);
-  console.log(`\n  ${config.name} — powered by agents.eco framework`);
+  console.log(`\n  ${config.name} — powered by Bottensor Forge`);
   console.log(`  Provider: ${config.provider.name} (${config.provider.defaultModel})`);
   console.log(`  Type 'exit' to quit, 'clear' to reset history\n`);
 
@@ -227,7 +220,7 @@ async function cmdChat(): Promise<void> {
 async function cmdRun(promptText: string): Promise<void> {
   const config = loadConfig();
   if (!config) {
-    console.error("No agent.yaml found. Run 'agents-eco init' first.");
+    console.error("No agent.yaml found. Run 'bottensor-forge init' first.");
     process.exit(1);
   }
 
@@ -244,7 +237,7 @@ async function cmdRun(promptText: string): Promise<void> {
 async function cmdSkills(): Promise<void> {
   const config = loadConfig();
   if (!config) {
-    console.error("No agent.yaml found. Run 'agents-eco init' first.");
+    console.error("No agent.yaml found. Run 'bottensor-forge init' first.");
     process.exit(1);
   }
 
@@ -280,7 +273,7 @@ switch (command) {
     break;
   case "run":
     if (!args[1]) {
-      console.error("Usage: agents-eco run <prompt>");
+      console.error("Usage: bottensor-forge run <prompt>");
       process.exit(1);
     }
     cmdRun(args.slice(1).join(" "));

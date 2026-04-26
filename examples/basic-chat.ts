@@ -9,7 +9,7 @@ import { Agent } from "../src/index.js";
 
 const agent = new Agent({
   name: "basic-bot",
-  systemPrompt: "You are a friendly, concise AI assistant powered by agents.eco.",
+  systemPrompt: "You are a friendly, concise AI assistant.",
   provider: {
     name: "venice",
     apiKey: process.env.VENICE_API_KEY ?? "",

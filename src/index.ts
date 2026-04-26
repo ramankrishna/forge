@@ -2,7 +2,7 @@
 export { Agent } from "./agent.js";
 
 // ── Providers ───────────────────────────────────────────
-export { OpenAIProvider, agentsEcoProvider, veniceProvider, openaiProvider, groqProvider, ollamaProvider } from "./provider.js";
+export { OpenAIProvider, veniceProvider, openaiProvider, groqProvider, ollamaProvider } from "./provider.js";
 
 // ── Skills ──────────────────────────────────────────────
 export { parseSkill, loadSkill, loadSkillsFromDir, buildSkillSummary, buildSkillContext, collectTools } from "./skills.js";

@@ -9,7 +9,7 @@ import type {
 
 /**
  * OpenAI-compatible provider.
- * Works with: OpenAI, Venice, Groq, Together, Ollama, agents.eco, any OpenAI-compatible API.
+ * Works with: OpenAI, Venice, Groq, Together, Ollama, or any OpenAI-compatible API.
  */
 export class OpenAIProvider implements Provider {
   readonly name: string;
@@ -96,16 +96,6 @@ export class OpenAIProvider implements Provider {
 }
 
 // ── Pre-configured provider factories ───────────────────
-
-/** Create a provider for agents.eco API */
-export function agentsEcoProvider(apiKey: string, baseUrl = "https://agents-eco-dfc6baa9f955.herokuapp.com"): Provider {
-  return new OpenAIProvider({
-    name: "agents.eco",
-    apiKey,
-    baseUrl: `${baseUrl}/v1`,
-    defaultModel: "qwen3-4b",
-  });
-}
 
 /** Create a provider for Venice AI */
 export function veniceProvider(apiKey: string): Provider {
