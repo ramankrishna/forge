@@ -1,6 +1,6 @@
 {
   "name": "@bottensor/forge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Open agentic framework — skills-as-markdown, pluggable LLM providers, file-based memory. Built for Bottensor.",
   "type": "module",
   "main": "./dist/index.js",
@@ -13,7 +13,7 @@
     }
   },
   "bin": {
-    "bottensor-forge": "./dist/cli.js"
+    "bottensor-forge": "dist/cli.js"
   },
   "files": [
     "dist",
@@ -23,7 +23,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && chmod +x dist/cli.js",
     "clean": "rm -rf dist",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run clean && npm run build"
@@ -44,7 +44,7 @@
   "homepage": "https://github.com/ramankrishna/forge",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ramankrishna/forge"
+    "url": "git+https://github.com/ramankrishna/forge.git"
   },
   "bugs": {
     "url": "https://github.com/ramankrishna/forge/issues"
